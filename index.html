@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="navfooter.css" />
+    <title>Dillan Merchant</title>
+
+    <style>
+        :root {
+            --content-color: #C3073F;
+        }
+
+        main {
+            padding-top: 100px;
+        }
+
+        #top-half {
+            width: 100%;
+            height: 325px;
+            background-color: #1A1A1D;
+        }
+
+        main h1 {
+            font-family: 'Modern', sans-serif;
+            text-align: center;
+            padding-top: 75px;
+            font-size: 50pt;
+            color: white;
+            letter-spacing: 5pt;
+        }
+
+        #profile {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            margin-top: -125px;
+            border: 3px solid white;
+        }
+
+        #bottom-half h2 {
+            color: var(--content-color);
+            text-align: center;
+            font-size: 35pt;
+            font-family: 'Lato', sans-serif;
+            margin-top: 25px;
+        }
+
+        #bottom-half p {
+            font-family: 'Lato', sans-serif;
+            font-size: 15pt;
+            text-align: center;
+            margin: 10px 7vw;
+        }
+
+        #resbutton {
+            display: block;
+            margin: 20px auto;
+            background-color: var(--content-color);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            font-size: 15pt;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        #resbutton:hover {
+            cursor: pointer;
+            background-color: #c04066;
+        }
+
+        form {
+            padding-bottom: 100px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .line {
+                display: none;
+            }
+
+            #top-half {
+                height: 425px;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            #profile {
+                margin-top: -75px;
+            }
+            main h1 {
+                font-size: 30pt;
+            }
+            #top-half {
+                height: 350px;
+            }
+
+            #bottom-half h2 {
+                font-size: 25pt;
+            }
+
+            .footer-link {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img alt="logo" class="logo-header" src="content/images/logo-white.png" width="80" />
+            </a>
+            <svg class="menu-toggle" viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+            </svg>
+            <ul class="nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="top-half">
+            <h1><span class="line">-</span> DILLAN MERCHANT <span class="line">-</span></h1>
+        </section>
+
+        <img alt="profile picture" srcset="content/images/profile-small.jpg 150w,
+        content/images/profile.jpg 250w" sizes="(max-width: 320px) 150px,
+            250px" id="profile" src="content/images/profile.jpg" />
+        <section id="bottom-half">
+            <h2>"Experiment the Experience"</h2>
+            <p>Strive to put yourself out in the world in order to experience as many things as possible -
+                adventures, emotions, locations, etc. are all experiences that one must try and live, whether they be
+                good or bad</p>
+            <form method="get" action="content/WebResume.pdf">
+                <button id="resbutton" type="submit">Resume</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <img alt="logo" id="logo-footer" src="content/images/logo-white.png" width=60 />
+        <address class="footer-links">
+            <a href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/">
+                <img alt="linkedin" class="footer-link" src="content/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/dillan.merchant/">
+                <img alt="instagram" class="footer-link" src="content/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100012024063093">
+                <img alt="facebook" class="footer-link" src="content/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:dillanmerchant@gmail.com">
+                <img alt="email" class="footer-link" src="content/images/mail-footer.svg">
+            </a>
+            <a href="https://github.com/dillanmerchant">
+                <img alt="github" class="footer-link" src="content/images/github.svg">
+            </a>
+        </address>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+    </script>
+</body>
+
+</html>

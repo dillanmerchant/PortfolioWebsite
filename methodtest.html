@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HW5</title>
+</head>
+
+<style>
+    #article-form {
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+
+<body>
+    <form id="article-form">
+        <input type="radio" id="fetch" name="requestType" value="fetch" checked>
+        <label for="fetch">Fetch</label>
+        <input type="radio" id="xml" name="requestType" value="xml">
+        <label for="xml">XML</label><br><br>
+
+        <label for="entryID">ID</label>
+        <input type="number" id="entryID" name="entryID"><br><br>
+
+        <label for="article_name">Article Name</label>
+        <input type="text" id="article_name" name="article_name"><br><br>
+
+        <label for="article_body">Article Body</label>
+        <textarea id="article_body" name="article_body"></textarea><br><br>
+
+        <menu>
+            <button id="postBtn">POST</button>
+            <button id="getBtn">GET</button>
+            <button id="putBtn">PUT</button>
+            <button id="deleteBtn">DELETE</button>
+        </menu>
+
+        <output id="response"></output>
+    </form>
+
+    <script>
+        /* POST Button */
+        document.getElementById('postBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            //see if user wants to do a fetch or XHR request
+            const requestType = giveRequestType();
+
+            //gather values from form and set current date
+            let entryID = document.getElementById('entryID').value;
+            let articleName = document.getElementById('article_name').value;
+            let articleBody = document.getElementById('article_body').value;
+            let currentDate = new Date().toString();
+            //let currentDate = date.getDate();
+
+            //initiate fetch request if prompted (reponse handled in function)
+            if (requestType == 'fetch') {
+                fetch("https://httpbin.org/post", {
+                    method: "POST",
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: entryID,
+                        name: articleName,
+                        body: articleBody,
+                        date: currentDate
+                    })
+                })
+                    .then(result => result.json())
+                    .then(result => { handleResponse(result) })
+                    .catch(error => { console.log('Error received:' + error) });
+            }
+            //initiate XHR request if prompted (reponse handled in function)
+            else if (requestType == 'xml') {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        handleXMLResponse(xhr.responseText);
+                    }
+                };
+                xhr.open("POST", "https://httpbin.org/post", true);
+                xhr.send(JSON.stringify({
+                    id: entryID,
+                    name: articleName,
+                    body: articleBody,
+                    date: currentDate
+                }));
+            }
+            //reset the form inputs
+            resetForm();
+        });
+
+
+        /* GET Button */
+        document.getElementById('getBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            //see if user wants to do a fetch or XHR request
+            const requestType = giveRequestType();
+
+            //initiate fetch request if prompted (reponse handled in function)
+            if (requestType == 'fetch') {
+                fetch("https://httpbin.org/get")
+                    .then(result => result.json())
+                    .then(result => { handleResponse(result) })
+                    .catch(error => { console.log('Error received:' + error) });
+            }
+            //initiate XHR request if prompted (reponse handled in function)
+            else if (requestType == 'xml') {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        handleXMLResponse(xhr.responseText);
+                    }
+                };
+                xhr.open("GET", "https://httpbin.org/get", true);
+                xhr.send();
+            }
+            //reset the form inputs
+            resetForm();
+        });
+
+
+        /* PUT Button */
+        document.getElementById('putBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            //see if user wants to do a fetch or XHR request
+            const requestType = giveRequestType();
+
+            //gather values from form and set current date
+            let entryID = document.getElementById('entryID').value;
+            let articleName = document.getElementById('article_name').value;
+            let articleBody = document.getElementById('article_body').value;
+            let currentDate = new Date().toString();
+            //let currentDate = date.getDate();
+
+            //initiate fetch request if prompted (reponse handled in function)
+            if (requestType == 'fetch') {
+                fetch(`https://httpbin.org/put?id=${entryID}`, {
+                    method: "PUT",
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: entryID,
+                        name: articleName,
+                        body: articleBody,
+                        date: currentDate
+                    })
+                })
+                    .then(result => result.json())
+                    .then(result => { handleResponse(result) })
+                    .catch(error => { console.log('Error received:' + error) });
+            }
+            //initiate XHR request if prompted (reponse handled in function)
+            else if (requestType == 'xml') {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        handleXMLResponse(xhr.responseText);
+                    }
+                };
+                xhr.open("PUT", `https://httpbin.org/put?id=${entryID}`, true);
+                xhr.send(JSON.stringify({
+                    id: entryID,
+                    name: articleName,
+                    body: articleBody,
+                    date: currentDate
+                }));
+            }
+            //reset the form inputs
+            resetForm();
+        });
+
+
+        /* DELETE Button */
+        document.getElementById('deleteBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            //see if user wants to do a fetch or XHR request
+            const requestType = giveRequestType();
+
+            //initiate fetch request if prompted (reponse handled in function)
+            if (requestType == 'fetch') {
+                let article = document.getElementById('article-form');
+                fetch(`https://httpbin.org/delete?id=${entryID.value}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                    .then(result => result.json())
+                    .then(result => { handleResponse(result) })
+                    .catch(error => { console.log('Error received:' + error) });
+            }
+            //initiate XHR request if prompted (reponse handled in function)
+            else if (requestType == 'xml') {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        handleXMLResponse(xhr.responseText);
+                    }
+                };
+                xhr.open("DELETE", `https://httpbin.org/delete?id=${entryID.value}`, true);
+                xhr.send();
+            }
+            //reset the form inputs
+            resetForm();
+        });
+
+
+        /* Check to see whoch radio input is chosen in order to do respective request */
+        function giveRequestType() {
+            var choice = document.getElementsByName('requestType');
+
+            //loop throuhg radio buttons and return value of one checked
+            for (i = 0; i < choice.length; i++) {
+                if (choice[i].checked)
+                    return choice[i].value;
+            }
+        }
+
+        /* Handle the response of the fetch api and input it into HTML */
+        function handleResponse(jsonResponse) {
+            let innertxt = '';
+            let output = document.getElementById('response');
+            output.innerHTML = 'Fetch<br><br>';
+            //take the JSON reposnse and loop through the keys and values
+            for (const key in jsonResponse) {
+                //if value is another object, loop through that as well
+                if (typeof (jsonResponse[key]) == 'object') {
+                    for (const innerkey in jsonResponse[key]) {
+                        innertxt += `&nbsp; ${innerkey}: ${jsonResponse[key][innerkey]}<br> `
+                    }
+                } else {
+                    innertxt = `${jsonResponse[key]}`
+                }
+                //output into HTML
+                output.innerHTML += `<b>${key}</b>: ${innertxt}<br>`;
+            }
+        }
+
+        /* Take the response from the XHR response and input it into the output HTML */
+        function handleXMLResponse(response) {
+            let output = document.getElementById('response');
+            output.innerHTML = `XML<br><br><pre>${response}</pre>`;
+        }
+
+        /* Reset all the inputs of the form */
+        function resetForm() {
+            document.getElementById('entryID').value = '';
+            document.getElementById('article_name').value = '';
+            document.getElementById('article_body').value = '';
+        }
+    </script>
+</body>
+
+</html>

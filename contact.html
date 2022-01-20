@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="navfooter.css" />
+    <title>Dillan Merchant</title>
+
+    <style>
+        :root {
+            --content-color: #C3073F;
+        }
+        main {
+            padding-top: 100px;
+        }
+
+        main h1 {
+            margin: 50px 0px 20px 7vw;
+            font-family: 'Lato', sans-serif;
+            color: var(--content-color);
+            font-size: 40pt;
+        }
+
+        form {
+            font-family: 'Lato', sans-serif;
+            font-size: 18pt;
+            color: white;
+            background: var(--content-color);
+            width: 75%;
+            margin: 0 auto;
+            padding: 40px
+        }
+
+        input[type="text"] {
+            font-size: 15pt;
+            font-family: 'Lato', sans-serif;
+            width: 30%;
+            height: auto;
+        }
+
+        input[type="submit"] {
+            font-size: 15pt;
+            font-family: 'Lato', sans-serif;
+            background: white;
+            color: var(--content-color);
+            padding: 10px 20px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            cursor: pointer;
+            background: lightgray;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            font-size: 15pt;
+            font-family: 'Lato', sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        #changeover {
+            font-family: 'Lato', sans-serif;
+            font-size: 25pt;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .socials ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .socials ul li {
+            font-size: 30pt;
+            list-style-type: none;
+            margin: 0px 15px;
+        }
+
+        .fa {
+            color: black;
+        }
+
+        .socials {
+            padding-bottom: 100px;
+        }
+
+        @media screen and (max-width: 768px) {
+            input[type="text"] {
+                width: 65%;
+            }
+            form {
+                font-size: 12pt;
+            }
+            main h1 {
+                font-size: 30pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img alt="logo" class="logo-header" src="content/images/logo-white.png" width="80" />
+            </a>
+            <svg class="menu-toggle" viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+            </svg>
+            <ul class="nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>CONTACT ME</h1>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write me something.."></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <p id="changeover">OR</p>
+        <address class="socials">
+            <ul>
+                <li><a rel="noopener" href="https://www.facebook.com/profile.php?id=100012024063093" target="_blank"><img alt="facebook" src="content/images/facebook-black.svg" width=75 /></a></li>
+                <li><a rel="noopener" href="https://github.com/dillanmerchant" target="_blank"><img alt="github" src="content/images/github-black.svg" width=75 /></a></li>
+                <li><a rel="noopener" href="mailto:dillan.merchant@gmail.com"><img alt="email" src="content/images/mail-black.svg" width=75 /></a></li>
+                <li><a rel="noopener" href="https://www.instagram.com/dillan.merchant/" target="_blank"><img alt="instagram" src="content/images/instagram-black.svg" width=75 /></a></li>
+                <li><a rel="noopener" href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/" target="_blank"><img alt="linkedin" src="content/images/linkedin-black.svg" width=75 /></a></li>
+            </ul>
+        </address>
+    </main>
+
+    <footer>
+        <img alt="logo" id="logo-footer" src="content/images/logo-white.png" width=60 />
+        <address class="footer-links">
+            <a href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/">
+                <img alt="linkedin" class="footer-link" src="content/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/dillan.merchant/">
+                <img alt="instagram" class="footer-link" src="content/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100012024063093">
+                <img alt="facebook" class="footer-link" src="content/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:dillanmerchant@gmail.com">
+                <img alt="email" class="footer-link" src="content/images/mail-footer.svg">
+            </a>
+            <a href="https://github.com/dillanmerchant">
+                <img alt="github" class="footer-link" src="content/images/github.svg">
+            </a>
+        </address>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+    </script>
+</body>
+
+</html>

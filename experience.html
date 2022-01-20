@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="navfooter.css" />
+  <title>Dillan Merchant</title>
+
+  <style>
+    :root {
+      --content-color: #C3073F;
+    }
+
+    main {
+      padding-top: 100px;
+    }
+
+    main h1 {
+      margin: 50px 0px 20px 7vw;
+      font-family: 'Lato', sans-serif;
+      color: var(--content-color);
+      font-size: 40pt;
+    }
+
+    .work-container {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      background: #4E4E50;
+      border-radius: 5px;
+      color: white;
+      padding: 20px;
+    }
+
+    .content-card {
+      font-family: 'Lato', sans-serif;
+      font-size: 15pt;
+    }
+
+    .content-card ul {
+      list-style-position: inside;
+    }
+
+    .content-title {
+      margin-bottom: 20px;
+    }
+
+    .image-card {
+      margin-right: 2vw;
+    }
+
+    .education {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .education-container p {
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 13pt;
+    }
+
+    @media screen and (max-width: 960px) {
+      .education {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .education-container {
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .work-container {
+        flex-wrap: wrap;
+      }
+
+      .image-card {
+        margin: 0 auto;
+      }
+
+      .content-card h2 {
+        font-size: 15pt;
+      }
+
+      .content-card li {
+        font-size: 13pt;
+      }
+
+      main h1 {
+        font-size: 20pt;
+      }
+
+      #soft-content {
+        margin-top: -20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">
+        <img alt="logo" class="logo-header" src="content/images/logo-white.png" width="80" />
+      </a>
+      <svg class="menu-toggle" viewBox="0 0 100 80" width="40" height="40">
+        <rect width="100" height="10"></rect>
+        <rect y="30" width="100" height="10"></rect>
+        <rect y="60" width="100" height="10"></rect>
+      </svg>
+      <ul class="nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>WORK</h1>
+      <div class="work-container">
+        <picture class="image-card">
+          <source media="(min-width:680px)" srcset="content/images/cubic.png">
+          <img src="content/images/cubic-smaller.png" alt="cubic logo" style="width:auto;">
+        </picture>
+        <aside class="content-card">
+          <h2 class="content-title">Cubic Corporation - Software Engineer Intern</h2>
+          <ul>
+            <li>Working to improve connectivity/networks for natural disasters and military deployments</li>
+            <li>Developed bash scripts to automate and facilitate testing of network nodes which cut testing time in
+              half</li>
+            <li>Handled network link adaptation, specifically calculation of power allocation to links based on
+              environmental conditions in order to optimize power usage</li>
+          </ul>
+        </aside>
+      </div>
+      <div class="work-container">
+        <picture class="image-card">
+          <source media="(min-width:680px)" srcset="content/images/ccc.png">
+          <img src="content/images/ccc-smaller.png" alt="ccc logo" style="width:auto;">
+        </picture>
+        <aside class="content-card">
+          <h2 class="content-title">Cornerstone Community Consulting - Software Consultant</h2>
+          <ul>
+            <li>Responsible for full stack web development of YogurtWorld website in order to drive traffic and boost
+              both customer satisfaction and user experience</li>
+            <li>Improved Cornerstone Community Consultant’s website by fostering a more versatile platform to be used
+              across a variety of devices and screen sizes ultimately offering the user greater accessibility of the
+              site</li>
+          </ul>
+        </aside>
+      </div>
+      <div class="work-container">
+        <img class="image-card" alt="softclouds logo" src="content/images/softclouds.png">
+        <aside class="content-card" id="soft-content">
+          <h2 class="content-title">Softclouds LLC - Software Engineer Intern</h2>
+          <ul>
+            <li>Developed "AppManager", an app that facilitates the monitoring and managing of apps on Android devices
+              to organize and optimize a user’s storage</li>
+            <li>Created the app documentation for user ease of use, designed the wireframes with InVision, and used
+              Android Studio to implement the backend logic with Java and frontend with XML</li>
+            <li>Published AppManager on Google Playstore (See "Projects")</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <h1>EDUCATION</h1>
+      <div class="education">
+        <div class="education-container">
+          <picture>
+            <source media="(min-width:680px)" srcset="content/images/ucsd.png">
+            <img src="content/images/ucsd-smaller.png" alt="ucsd logo" style="width:auto;">
+          </picture>
+          <p>2019-Present</p>
+          <p>GPA: 3.7</p>
+        </div>
+        <div class="education-container">
+          <picture>
+            <source media="(min-width:680px)" srcset="content/images/palomar.png">
+            <img src="content/images/palomar-smaller.png" alt="palomar college logo" style="width:auto;">
+          </picture>
+          <p>2017-2018</p>
+          <p>GPA: 4.0</p>
+        </div>
+        <div class="education-container">
+          <picture>
+            <source media="(min-width:680px)" srcset="content/images/RBHS.png">
+            <img src="content/images/RBHS-smaller.png" alt="rbhs logo" style="width:auto;">
+          </picture>
+          <p>2015-2019</p>
+          <p>GPA: 4.3</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <img alt="logo" id="logo-footer" src="content/images/logo-white.png" width=60 />
+    <address class="footer-links">
+      <a href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/">
+        <img alt="linkedin" class="linkedin-footer" src="content/images/linkedinfooter.svg">
+      </a>
+      <a href="https://www.instagram.com/dillan.merchant/">
+        <img alt="insta" class="instagram-footer" src="content/images/instagramfooter.svg">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100012024063093">
+        <img alt="facebook" class="facebook-footer" src="content/images/facebookfooter.svg">
+      </a>
+      <a href="mailto:dillanmerchant@gmail.com">
+        <img alt="email" class="mail-footer2" src="content/images/mail-footer.svg">
+      </a>
+      <a href="https://github.com/dillanmerchant">
+        <img alt="github" class="mail-footer2" src="content/images/github.svg">
+      </a>
+    </address>
+  </footer>
+
+  <script>
+    let navBurger = document.querySelector('.menu-toggle');
+    let navigation = document.querySelector('.nav');
+    navBurger.addEventListener('click', function () {
+      navigation.classList.toggle('showing');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+/*-------General--------*/
+@font-face{
+    font-family: Modern;
+    src: url('content/fonts/TitilliumWeb-ExtraLight.ttf');
+}
+
+@font-face{
+    font-family: Lato;
+    src: url('content/fonts/Lato-Light.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --footer-color: #950740;
+    --nav-color: #1A1A1D;
+}
+
+/*-------Navbar--------*/
+header {
+    background: #1A1A1D;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+}
+
+header * {
+    color: white;
+    font-family: 'Modern', sans-serif;
+}
+
+header .logo-header {
+    float: left;
+    display: flex;
+    color: white;
+    padding: 10px 0px 20px 5vw;
+}
+
+.logo-header > img {
+    margin-right: 5px;
+}
+
+header ul {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin-right: 5vw;
+    margin-top: 15px;
+}
+
+header ul li {
+    float: left;
+    position: relative;
+}
+
+header ul li a {
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    background: #444444;
+    transition: 0.5s;
+}
+
+.logo-header:hover {
+    cursor: pointer;
+}
+
+header .menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 790px) {
+    header {
+        position: fixed;
+    }
+
+    header ul {
+        width: 100%;
+        background: var(--nav-color);
+        margin-top: 0px;
+        margin-right: 0px;
+        max-height: 0px;
+        overflow: hidden;
+    }
+
+    .showing {
+        max-height: 100em;
+        margin-top: -10px;
+    }
+
+    header ul li {
+        width: 100%;
+    }
+
+    header .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 40px;
+        top: 30px;
+        font-size: 1.9em;
+        fill: white;
+    }
+
+    header .logo-header {
+        margin-left: 0.1em;
+    }
+}
+
+/*---------Footer---------*/
+
+main {
+    min-height: calc(100vh - 100px - 80px);
+}
+
+footer {
+    background: var(--footer-color);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-links a img {
+    height: 40px;
+    width: 40px;
+}
+
+.footer-links {
+    margin-left: auto;
+    margin-right: 3em;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.footer-links a {
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+#logo-footer {
+    margin-left: 1.5em;
+}
+
+.linkedin-footer {
+    fill: white;
+}

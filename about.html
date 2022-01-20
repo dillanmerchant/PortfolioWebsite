@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="navfooter.css" />
+    <title>Dillan Merchant</title>
+
+    <style>
+        :root {
+            --content-color: #C3073F;
+        }
+
+        main {
+            padding-top: 100px;
+        }
+
+        main h1 {
+            margin: 50px 0px 20px 7vw;
+            font-family: 'Lato', sans-serif;
+            color: var(--content-color);
+            font-size: 50pt;
+            font-style: italic;
+        }
+
+        main p {
+            margin: 20px 7vw;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /*Following is sourced by w3schools*/
+        .slideshow-container {
+            padding-top: 50px;
+            max-width: 450px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        #prevButton,
+        #nextButton {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 1px;
+            margin-top: -22px;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        #prevButton {
+            left: -20px;
+        }
+
+        /* Position the "next button" to the right */
+        #nextButton {
+            right: -20px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        #prevButton:hover,
+        #nextButton:hover {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        #activities {
+            margin-bottom: 100px;
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            #prevButton,
+            #nextButton {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img alt="logo" class="logo-header" src="content/images/logo-white.png" width="80" />
+            </a>
+            <svg class="menu-toggle" viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+            </svg>
+            <ul class="nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Hello!</h1>
+            <p>One of Dillan's main ideologies stems from his Dad, who believes that one should always live their life
+                to the fullest and not take it for granted. As a result, Dillan is always seeking new opportunities and
+                trying to step out of his comfort zone to gain new perspectives. He believes that the experiences and
+                challenges that one goes through in life shapes who they are and enables them to grow as a person. In
+                the words of C.S. Lewis, "Experience: that most brutal of teachers. But you learn, my God do you learn."
+                <br><br>
+                Growing up in San Diego, he is greatful for the opportunities he has been given and attributes a lot of
+                his values and character to his parents.
+                <br><br>
+                Currently he is pursuing a Computer Science degree from the Jacobs School of Engineering at UCSD. He
+                believes the experience he gains from this field will be very beneficial and relevant in today's
+                technologically advancing society. Navigate through the website to dive
+                deeper into the Dillan Merchant's experience, achievements, and interests.
+            </p>
+        </section>
+
+
+        <!--Code sourced from w3schools-->
+        <div class="slideshow-container">
+            <div class="slides fade">
+                <img alt="zor dance team solo" src="content/images/dance.jpeg">
+            </div>
+            <div class="slides fade">
+                <img alt="zor dance team grouped" src="content/images/dance2.jpg">
+            </div>
+            <div class="slides fade">
+                <img alt="sedona film picture" src="content/images/sedona.jpg">
+            </div>
+            <div class="slides fade">
+                <img alt="santorini greece" src="content/images/travel.jpeg">
+            </div>
+            <div class="slides fade">
+                <img alt="hitting a serve in tennis" src="content/images/tennis.jpg">
+            </div>
+
+            <a id="prevButton" onclick="plusSlides(-1)">&#10094;</a>
+            <a id="nextButton" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <article id="activities">
+            <p> <b>Dance</b><br>
+                Dancing is one of Dillan's greatest passions. At a young age, he remembers swaying to the music that his
+                parents used to play. He started pursuing his passion in sophmore year of high school when he joined the
+                B-boy breakdancing team. In junior and senior year, he used his dance skills to become choreographer and
+                president of a student-run organization called South Asian Culture Show. SACS included close to 150
+                students from 10 high schools across San Diego and its primary goal was to raise money for charities in
+                South Asia. The year that Dillan was president, the club raised close to $10,000. Finally, his dance
+                journey continued in college when he joined the competetive Bollywood Fusion dance team known as Zor.
+                Zor managed to place 5th in the nation through dedication and hard work.
+
+                <br><br><b>Tennis</b><br>
+                After casually playing tennis with his dad on weekends, Dillan became interested in this sport in 7th
+                grade. On his first team, he played #1 singles and won the USTA sectionals. Gaining confidence with this
+                experience, he made the Varisty tennis team in high school and became assistant coach for On the Rise
+                Tennis Academy. He is still coaching kids in tennis today.
+
+                <br><br><b>Dog Rescue</b><br>
+                Dillan's love for dogs cultivated after babysitting a friend's maltese. This motivated him to get
+                involved in a small local rescue called Holly's Garden. For the last few years, his family has fostered
+                many dogs until each dog found a permanent home. Dillan has helped with fundraising, managing social
+                media, and maintaining the website for Holly's Garden. As he gains more technical skills from his CS
+                major at UCSD, he hopes to continue finding innovative ways to help dogs in need.
+            </p>
+        </article>
+    </main>
+
+
+    <footer>
+        <img alt="logo" id="logo-footer" src="content/images/logo-white.png" width=60 />
+        <address class="footer-links">
+            <a href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/">
+                <img alt="linkedin" class="footer-link" src="content/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/dillan.merchant/">
+                <img alt="instagram" class="footer-link" src="content/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100012024063093">
+                <img alt="facebook" class="footer-link" src="content/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:dillanmerchant@gmail.com">
+                <img alt="email" class="footer-link" src="content/images/mail-footer.svg">
+            </a>
+            <a href="https://github.com/dillanmerchant">
+                <img alt="github" class="footer-link" src="content/images/github.svg">
+            </a>
+        </address>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            console.log('reached');
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+
+</body>
+
+</html>

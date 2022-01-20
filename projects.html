@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="navfooter.css" />
+    <title>Dillan Merchant</title>
+
+    <style>
+        :root {
+            --content-color: #C3073F;
+        }
+
+        main {
+            padding-top: 100px;
+        }
+
+        main h1 {
+            margin: 50px 0px 20px 7vw;
+            font-family: 'Lato', sans-serif;
+            color: var(--content-color);
+            font-size: 40pt;
+        }
+
+        details {
+            margin: 0 auto;
+            overflow: hidden;
+            width: 60%;
+            font-family: 'Lato', sans-serif;
+        }
+
+        summary {
+            padding: 1.5rem;
+            display: block;
+            background: #1A1A1D;
+            font-size: 20pt;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content img {
+            margin-right: 20px;
+        }
+
+        .content {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p a {
+            text-decoration: none;
+            color: var(--content-color);
+        }
+
+        p a:hover {
+            cursor: pointer;
+            color: #c25475;
+        }
+
+        #graph {
+            margin-right: 20px;
+        }
+
+        .projects {
+            padding-bottom: 100px;
+        }
+
+        @media screen and (max-width: 1280px) {
+            #cse100 {
+                flex-wrap: wrap;
+            }
+
+            #cse100 img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+            .content {
+                flex-wrap: wrap;
+            }
+
+            .content p {
+                margin-top: 20px;
+                margin-left: 0;
+            }
+
+            .content img {
+                margin-right: 0;
+            }
+
+        }
+
+        @media screen and (max-width: 500px) {
+            .content img {
+                display: none;
+            }
+
+            #graph img {
+                display: none;
+            }
+
+            #huffman img {
+                display: none;
+            }
+
+            .content p {
+                font-size: 10pt;
+                margin-top: 10px;
+            }
+
+            summary {
+                font-size: 15pt;
+            }
+
+            #csproject {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img alt="logo" class="logo-header" src="content/images/logo-white.png" width="80" />
+            </a>
+            <svg class="menu-toggle" viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="10"></rect>
+                <rect y="30" width="100" height="10"></rect>
+                <rect y="60" width="100" height="10"></rect>
+            </svg>
+            <ul class="nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects">
+            <h1>PROJECTS</h1>
+            <details>
+                <summary>Pomodoro Timer</summary>
+                <div class="content">
+                    <img alt="pomodoro project image" src="content/images/pomodoro.png" width=305 />
+                    <p>The Pomodoro Timer was a Web App built with a team of classmates within the class CSE 110
+                        (Software Engineering). <br><br>It implemented the Pomodoro study technique with an addition to
+                        a convenient task list to help users with organization and time management. <br><br>From this
+                        project, I was able to increased my HTML/CSS/Javascript knowledge and learn many workflows that
+                        are practiced within the Software workforce. Team bonding was emphasized and allowed me to gain
+                        perspective of what a strong, efficient team consists of.<br><br>
+                        To view the Pomodoro Timer <a rel="noopener" href="https://seanye24.github.io/cse110-w21-group6/"
+                            target="_blank">Click Here</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>AppManager</summary>
+                <div class="content">
+                    <img alt="appmanager screenshots" src="content/images/appmanager.jpg" width=305 />
+                    <p>During my last internship, I was given the task to create an Android application. This app was
+                        called AppManager. <br><br> Essentially, the app was a way to manage all the apps you have
+                        downloaded on your device and give you valuable information on how to manage them - usability,
+                        security, storage, battery usage, etc. <br><br> This full stack development of the application
+                        allowed me to learn a lot about the Software app creation project. I dived deep into
+                        documentation, working with temas, meeting deadlines, designing in the front-end, and
+                        programming/debugging in the back-end.<br><br>Click to view <a rel="noopener"
+                            href="https://play.google.com/store/apps/details?id=com.cloud.appmanager&hl=en_US"
+                            target="_blank">AppManager</a></p>
+                </div>
+            </details>
+            <details>
+                <summary id="csproject">Huffman Compression/Graphs</summary>
+                <div class="content" id="cse100">
+                    <div id="graph">
+                        <img alt="graph with nodes" src="content/images/graph.png" width=305 />
+                        <p>During the completion of CSE 100, we created a lossless file compression method using the
+                            Huffman Tree method. We were required to both compress and uncompress files based on our
+                            created Huffman Tree through an algorithmic process. The program was coded in C++ and
+                            consisted of reading/writing through Bitwise I/O bufferss</p>
+                    </div>
+                    <div id="huffman">
+                        <img alt="huffman tree example" src="content/images/huffman.png" width=305 />
+                        <p>Another CSE 100 project required su to simulate graph properties. We created an appropriate
+                            data structure to hold all the information of a graph and then create algorithms to find out
+                            information about the graph - for example, Bread-First Search and Dijkstra's algorthims were
+                            created in order to find both unweighted and weighted shortest paths.
+                        </p>
+                    </div>
+                </div>
+            </details>
+            <details>
+                <summary>YogurtWorld</summary>
+                <div class="content">
+                    <img alt="yogurtworld site wireframes" src="content/images/yogurtworld.jpg" width=305 />
+                    <p>When joining the pro-bono consulting company at UCSD, we often get clients that need help on the
+                        technical side in order to frow their business. For YogurtWorld, the frozen yogurt shop on
+                        campus, they wanted to create a website in order to better advertise their store and
+                        products/flavors in order to gain more traffic within the location. <br><br> Working with fellow
+                        classmates in the club, we started to both design and develop a professional-looking website in
+                        order to satisfy our client and their needs of technical aid. <br><br>The YogurtWorld website
+                        will be published soon...</p>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <img alt="logo" id="logo-footer" src="content/images/logo-white.png" width=60 />
+        <address class="footer-links">
+            <a href="https://www.linkedin.com/in/dillan-merchant-66b0251a5/">
+                <img alt="linkedin" class="footer-link" src="content/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/dillan.merchant/">
+                <img alt="instagram" class="footer-link" src="content/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100012024063093">
+                <img alt="facebook" class="footer-link" src="content/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:dillanmerchant@gmail.com">
+                <img alt="email" class="footer-link" src="content/images/mail-footer.svg">
+            </a>
+            <a href="https://github.com/dillanmerchant">
+                <img alt="github" class="footer-link" src="content/images/github.svg">
+            </a>
+        </address>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+    </script>
+</body>
+
+</html>
